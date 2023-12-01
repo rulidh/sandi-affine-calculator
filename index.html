@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandi Affine Kalkulator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Sandi Affine</h1>
+        <form action="" id="pure-form">
+            <div class="form-container">
+                <section id="plain-sect">
+                    <label for="plaintext"><h3 class="input-label">Plaintext / Ciphertext</h3></label>
+                    <input type="text" class="inputbox" name="plaintext" id="plaintext" placeholder="Masukkan kata yang ingin di enkripsi/dekripsi">
+                </section>
+                <section id="operation-sect">
+                    <ul id="operation-list">
+                        <li>
+                            <label for="operation"><b>Enkripsi</b></label>
+                            <input type="radio" name="operation" class="operation" value="encrypt" style="height:15px; width:15px; vertical-align: middle;">
+                        </li>
+                        <li>
+                            <label for="operation"><b>Dekripsi</b></label>
+                            <input type="radio" name="operation" class="operation" value="decrypt" style="height:15px; width:15px; vertical-align: middle;">
+                        </li>
+                    </ul>
+                </section> 
+                <section id="a-sect">
+                    <label for="a"><h3 class="input-label">Kunci 1</h3></label>
+                    <input type="number" class="inputbox" name="a" id="a" placeholder="Key 1">
+                </section>
+                <section id="b-sect">
+                    <label for="b"><h3 class="input-label">Kunci 2</h3></label>
+                    <input type="number" class="inputbox" name="b" id="b" placeholder="Key 2">
+                </section>
+            </div>
+            <button id="affine-btn" type="submit"><b>Submit</b></button>
+        </form>
+        <h2 id="txt">Text: -</b></h1>
+        <h2>Operasi: <b id="operasi-txt">-</b></h2>
+        <h2>Hasil: <b id="hasil">-</b></h2>
+    </div>
+</body>
+<script src="calculator.js"></script>
+<script>
+    var operasi= document.querySelectorAll('.operation');
+    var check_operasi = function() {
+        var value;
+        [...operasi].forEach((q) => {
+            if(q.checked){
+                value= q.value;
+            }
+        })   
+        return value; 
+    } 
+</script>
+</html>
